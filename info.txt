@@ -1,1 +1,1 @@
-test https://github.com/jibbosh/test
+Project Name 1|https://github.com/jibbosh/project1
