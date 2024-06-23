@@ -23,24 +23,19 @@
             padding: 10px 0;
             text-align: center;
             font-size: 14px;
-            position: fixed;
-            top: 0;
-            left: 0;
             z-index: 1000;
         }
 
         .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 50px;
-            padding: 20px;
+            display: flex;
             width: 100%;
             max-width: 1200px;
+            margin-top: 50px;
             box-sizing: border-box;
         }
 
         .project {
+            flex: 1;
             background-color: #ff99cc;
             padding: 20px;
             border: 1px solid #cc6699;
@@ -49,6 +44,8 @@
             cursor: pointer;
             text-decoration: none;
             color: #660066;
+            margin: 20px;
+            text-align: center;
         }
 
         .project:hover {
@@ -60,7 +57,9 @@
         }
 
         .back-link {
-            margin-top: 20px;
+            position: fixed;
+            top: 10px;
+            left: 10px;
         }
 
         .back-link a {
@@ -85,6 +84,10 @@
         This site may be locally hosted soon.
     </div>
 
+    <div class="back-link">
+        <a href="/">back</a>
+    </div>
+
     <div class="projects-container">
         <div class="project">
             <h3>Project 1</h3>
@@ -94,42 +97,6 @@
             <h3>Project 2</h3>
             <p>Description of project 2.</p>
         </div>
-        <div class="project">
-            <h3>Project 3</h3>
-            <p>Description of project 3.</p>
-        </div>
-        <div class="project">
-            <h3>Project 4</h3>
-            <p>Description of project 4.</p>
-        </div>
-        <div class="project">
-            <h3>Project 5</h3>
-            <p>Description of project 5.</p>
-        </div>
-        <div class="project">
-            <h3>Project 6</h3>
-            <p>Description of project 6.</p>
-        </div>
-        <div class="project">
-            <h3>Project 7</h3>
-            <p>Description of project 7.</p>
-        </div>
-        <div class="project">
-            <h3>Project 8</h3>
-            <p>Description of project 8.</p>
-        </div>
-        <div class="project">
-            <h3>Project 9</h3>
-            <p>Description of project 9.</p>
-        </div>
-        <div class="project">
-            <h3>Project 10</h3>
-            <p>Description of project 10.</p>
-        </div>
-    </div>
-
-    <div class="back-link">
-        <a href="/">back</a>
     </div>
 
 </body>
