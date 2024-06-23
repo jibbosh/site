@@ -13,6 +13,7 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            position: relative; /* Ensure flowers can be positioned absolutely */
         }
         .header {
             padding: 20px;
@@ -20,6 +21,9 @@
         .header img {
             width: 150px;
             border-radius: 50%;
+        }
+        .about-me, .gallery, .social-media {
+            padding: 40px 0;
         }
         .gallery img {
             width: 100%;
@@ -31,27 +35,24 @@
             text-decoration: none;
             color: #ff69b4;
         }
-        .flowers img {
-            width: 50px;
+        .flowers {
+            position: relative;
+            height: 100vh; /* Ensure flowers can spawn throughout the page height */
+        }
+        .flower {
             position: absolute;
-            animation: float 5s infinite;
-        }
-        @keyframes float {
-            0% {transform: translateY(0);}
-            50% {transform: translateY(-10px);}
-            100% {transform: translateY(0);}
-        }
-        .flower-click-animation {
-            animation: grow 0.5s, spin 1s;
-        }
-        @keyframes grow {
-            0% {transform: scale(1);}
-            50% {transform: scale(1.2);}
-            100% {transform: scale(1);}
+            top: 0;
+            left: 0;
+            width: 50px;
+            animation: spin 10s infinite linear, sway 5s infinite alternate ease-in-out;
         }
         @keyframes spin {
             0% {transform: rotate(0deg);}
             100% {transform: rotate(360deg);}
+        }
+        @keyframes sway {
+            0% {transform: translateX(0);}
+            100% {transform: translateX(10px);}
         }
     </style>
 </head>
@@ -83,18 +84,35 @@
 
     <div class="flowers">
         <!-- Flower images for animation -->
-        <img src="https://via.placeholder.com/50.png?text=Flower" alt="Flower 1" class="flower" onclick="animateFlower(this)">
-        <img src="https://via.placeholder.com/50.png?text=Flower" alt="Flower 2" class="flower" onclick="animateFlower(this)">
-        <!-- More flowers as needed -->
+        <!-- JavaScript will dynamically create and position these flowers -->
     </div>
 
     <script>
-        function animateFlower(element) {
-            element.classList.add('flower-click-animation');
-            setTimeout(() => {
-                element.classList.remove('flower-click-animation');
-            }, 1500);
+        // Function to generate random number within a range
+        function getRandomNumber(min, max) {
+            return Math.random() * (max - min) + min;
         }
+
+        // Function to create and animate flowers
+        function createFlowers() {
+            const flowerImage = 'https://i.ibb.co/JsWsj1z/download-4.png';
+            const numFlowers = 13;
+            const flowersContainer = document.querySelector('.flowers');
+
+            for (let i = 0; i < numFlowers; i++) {
+                const flower = document.createElement('img');
+                flower.src = flowerImage;
+                flower.classList.add('flower');
+                flower.style.top = getRandomNumber(0, window.innerHeight) + 'px';
+                flower.style.left = getRandomNumber(0, window.innerWidth) + 'px';
+                flowersContainer.appendChild(flower);
+            }
+        }
+
+        // Call the function to create flowers when the page loads
+        window.onload = function() {
+            createFlowers();
+        };
     </script>
 </body>
 </html>
