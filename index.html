@@ -17,68 +17,84 @@
             align-items: center;
         }
 
-        .top-bar {
-            background-color: #ff99cc;
+        .content {
+            max-width: 800px;
             width: 100%;
-            padding: 10px 0;
             text-align: center;
-            font-size: 14px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        .profile {
             margin-top: 50px;
-            text-align: center;
-        }
-
-        .profile img {
-            border-radius: 50%;
-        }
-
-        .name {
-            font-size: 32px;
-            margin-top: 10px;
         }
 
         .socials {
             margin-top: 20px;
             display: flex;
-            gap: 20px;
             justify-content: center;
-            align-items: center;
         }
 
         .socials a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #ff99cc;
             color: #660066;
-            text-decoration: none;
             font-size: 24px;
-            transition: color 0.3s;
+            line-height: 40px;
+            text-align: center;
+            margin: 0 10px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .socials a:hover {
+            background-color: #cc66cc;
             color: #993399;
+        }
+
+        .projects-link {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .projects-link a {
+            color: #660066;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #ff99cc;
+            border-radius: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .projects-link a:hover {
+            background-color: #cc66cc;
+            color: #993399;
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">
+    <div class="content">
+        <h1>josh's place</h1>
+        <p>Welcome to my humble abode on the internet!</p>
+
+        <div class="socials">
+            <a href="https://youtube.com/@jibbosh" target="_blank">YT</a>
+            <a href="https://scratch.mit.edu/users/jibbosh" target="_blank">SCRATCH</a>
+        </div>
+
+        <div class="projects-link">
+            <a href="projects.html">projects</a>
+        </div>
+    </div>
+
+    <div class="footer">
         This site may be locally hosted soon.
-    </div>
-
-    <div class="profile">
-        <img src="https://i.ibb.co/k5K24kt/IMG-3813.png" alt="profile picture" width="150" height="150">
-        <div class="name">josh</div>
-    </div>
-
-    <div class="socials">
-        <a href="https://github.com/jibbosh" target="_blank">github</a>
-        <a href="https://scratch.mit.edu/users/jibbosh/" target="_blank">scratch</a>
-        <a href="https://youtube.com/@jibbosh" target="_blank">youtube</a>
-        <a href="projects.html">projects</a>
     </div>
 
 </body>

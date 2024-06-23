@@ -17,25 +17,16 @@
             align-items: center;
         }
 
-        .top-bar {
-            background-color: #ff99cc;
-            width: 100%;
-            padding: 10px 0;
-            text-align: center;
-            font-size: 14px;
-            z-index: 1000;
-        }
-
         .projects-container {
             display: flex;
-            width: 100%;
+            flex-direction: column;
+            align-items: center;
             max-width: 1200px;
+            width: 100%;
             margin-top: 50px;
-            box-sizing: border-box;
         }
 
         .project {
-            flex: 1;
             background-color: #ff99cc;
             padding: 20px;
             border: 1px solid #cc6699;
@@ -46,6 +37,8 @@
             color: #660066;
             margin: 20px;
             text-align: center;
+            width: 100%;
+            max-width: 600px; /* Adjust as needed */
         }
 
         .project:hover {
@@ -57,9 +50,8 @@
         }
 
         .back-link {
-            position: fixed;
-            top: 10px;
-            left: 10px;
+            margin-top: 20px;
+            text-align: center;
         }
 
         .back-link a {
@@ -79,10 +71,6 @@
     </style>
 </head>
 <body>
-
-    <div class="top-bar">
-        This site may be locally hosted soon.
-    </div>
 
     <div class="back-link">
         <a href="/">back</a>
