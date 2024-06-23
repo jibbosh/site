@@ -3,92 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>josh's place</title>
+    <title>My Cute Pink Webpage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Sans+MS&family=Arial+Rounded+MT+Bold&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #ffcccc;
-            color: #660066;
-            font-family: Arial, sans-serif;
-            text-transform: lowercase;
+            background-color: #ffe6f2;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #333;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .content {
-            max-width: 800px;
-            width: 100%;
             text-align: center;
-            margin-top: 50px;
         }
-
-        .profile-pic {
+        .header {
+            padding: 20px;
+        }
+        .header img {
+            width: 150px;
             border-radius: 50%;
-            width: 150px; /* Adjust size as needed */
-            height: 150px; /* Adjust size as needed */
-            margin-bottom: 20px;
         }
-
-        .socials {
-            margin-top: 20px;
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
         }
-
-        .socials a {
-            color: #660066;
-            text-decoration: none;
-            font-size: 18px;
-            padding: 10px 20px;
-            background-color: #ff99cc;
-            border-radius: 10px;
-            transition: background-color 0.3s, color 0.3s;
+        .social-media a {
             margin: 0 10px;
-            display: inline-block;
-        }
-
-        .socials a:hover {
-            background-color: #cc66cc;
-            color: #993399;
-        }
-
-        .projects-link {
-            margin-top: 50px;
-            text-align: center;
-        }
-
-        .projects-link a {
-            color: #660066;
             text-decoration: none;
-            font-size: 18px;
-            padding: 10px 20px;
-            background-color: #ff99cc;
-            border-radius: 10px;
-            transition: background-color 0.3s, color 0.3s;
+            color: #ff69b4;
         }
-
-        .projects-link a:hover {
-            background-color: #cc66cc;
-            color: #993399;
+        .flowers img {
+            width: 50px;
+            position: absolute;
+            animation: float 5s infinite;
+        }
+        @keyframes float {
+            0% {transform: translateY(0);}
+            50% {transform: translateY(-10px);}
+            100% {transform: translateY(0);}
+        }
+        .flower-click-animation {
+            animation: grow 0.5s, spin 1s;
+        }
+        @keyframes grow {
+            0% {transform: scale(1);}
+            50% {transform: scale(1.2);}
+            100% {transform: scale(1);}
+        }
+        @keyframes spin {
+            0% {transform: rotate(0deg);}
+            100% {transform: rotate(360deg);}
         }
     </style>
 </head>
 <body>
-
-    <div class="content">
-        <img class="profile-pic" src="https://i.ibb.co/k5K24kt/IMG-3813.png" alt="Profile Picture">
-        <h1>josh's place (･ω･´)</h1>
-
-        <div class="socials">
-            <a href="https://youtube.com/@jibbosh" target="_blank">YouTube</a>
-            <a href="https://scratch.mit.edu/users/jibbosh" target="_blank">Scratch</a>
-            <a href="https://github.com/jibbosh" target="_blank">GitHub</a>
-        </div>
-
-        <div class="projects-link">
-            <a href="projects.html">projects</a>
-        </div>
+    <div class="header">
+        <img src="https://i.ibb.co/k5K24kt/IMG-3813.png" alt="Profile Picture">
+        <h1>Welcome to My Cute Pink Webpage!</h1>
     </div>
 
+    <div class="about-me">
+        <h2>About Me</h2>
+        <p>Hi, I'm Jibbosh! Welcome to my little corner of the web. Here you'll find my photos, videos, and more!</p>
+    </div>
+
+    <div class="gallery">
+        <h2>Gallery</h2>
+        <!-- Add your photos and videos here -->
+        <img src="https://via.placeholder.com/300x200.png?text=Photo+1" alt="Photo 1">
+        <img src="https://via.placeholder.com/300x200.png?text=Photo+2" alt="Photo 2">
+        <!-- More photos/videos -->
+    </div>
+
+    <div class="social-media">
+        <h2>Follow Me</h2>
+        <a href="https://twitter.com/jibbosh" target="_blank">Twitter</a>
+        <a href="https://instagram.com/jibbosh" target="_blank">Instagram</a>
+        <!-- More social media links -->
+    </div>
+
+    <div class="flowers">
+        <!-- Flower images for animation -->
+        <img src="https://via.placeholder.com/50.png?text=Flower" alt="Flower 1" class="flower" onclick="animateFlower(this)">
+        <img src="https://via.placeholder.com/50.png?text=Flower" alt="Flower 2" class="flower" onclick="animateFlower(this)">
+        <!-- More flowers as needed -->
+    </div>
+
+    <script>
+        function animateFlower(element) {
+            element.classList.add('flower-click-animation');
+            setTimeout(() => {
+                element.classList.remove('flower-click-animation');
+            }, 1500);
+        }
+    </script>
 </body>
 </html>
